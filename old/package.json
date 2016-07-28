@@ -1,0 +1,19 @@
+{
+  "name": "practicalassignment",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaSymbol/practical-assignment.git"
+  },
+  "author": "andrew crowe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NaSymbol/practical-assignment/issues"
+  },
+  "homepage": "https://github.com/NaSymbol/practical-assignment#readme"
+}

@@ -15,7 +15,7 @@ angular.module('practicalAssignmentApp')
       'Karma'
     ];
   }).controller('loadPlayersController', function($scope, $http) {
-
+  $scope.testValue = "this is a test";
     //test for data bind
     $scope.playerData = [{
        firstName: 'andy',

@@ -32,18 +32,17 @@ angular
   });
 
 
-
-
+/**
 //setup application
   var app = angular.module('myApp', []);
 
 
   //controller to add players into table from JSON data
   app.controller('loadPlayersController', function($scope, $http) {
-
+    $scope.testValue = "this is a test";
     //test for data bind
     $scope.playerData = [{
-       firstName: 'andy',
+       firstName: "andy",
        Surname: "crowe",
        Sex: "images/icon-male.png",
        Tier: "images/tier_gold.png",
@@ -60,3 +59,5 @@ angular
 
 
   });
+
+  */

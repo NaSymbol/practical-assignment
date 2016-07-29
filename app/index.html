@@ -27,7 +27,7 @@
           <img src="./images/Viz_logo.png">
           <div class="navbar-header">
 
-            <a class="navbar-brand" href="#/">practicalAssignment</a>
+            <h1>DataGrid Assignment</h1>
           </div>
 
 
@@ -57,7 +57,11 @@
 </form>
 
 <!-- need to have ng-repeat to loop through all the data and display each row -->
-      <div class="dataTable" ng-controller="loadPlayersController as loadplayers">
+      <div class="dataTable" ng-controller="loadPlayersController">
+
+        <!--test if data bind works-->
+        <p>{{loadPlayersController.testValue}}</p>
+        <p>{{testValue}}</p>
         <table>
           <tr>
             <th></th>
@@ -67,6 +71,7 @@
             <th>Tier</th>
             <th>Email</th>
           </tr>
+          <!-- section that repeats for each player -->
           <tr ng-repeat="">
             <th>{{loadplayers.id}}</th>
             <th>{{.firstName}}</th>

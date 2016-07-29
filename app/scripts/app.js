@@ -31,6 +31,12 @@ angular
       });
   });
 
+
+  var playerData = [{
+
+
+  }]
+
 //setup application
   var app = angular.module('myApp', []);
 

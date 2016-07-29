@@ -8,7 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -42,24 +42,37 @@
       add player
     </button>
 
+<!-- user input form needs to be a modal-->
+<form name="myForm">
+    First name:
+    <input type="" name="firstName" ng-model="" required>
+    Surname:
+    <input type="" name="Surname" ng-model="" required>
+    <input type="" name="Sex" ng-model="" required>
+    <input type="" name="Teir" ng-model="" required>
+    <input type="" name="Email" ng-model="" required>
+    <button>Cancel</button>
+    <button>Add</button>
+</form>
+
 <!-- need to have ng-repeat to loop through all the data and display each row -->
-      <div class="dataTable" ng-controller="loadPlayers">
+      <div class="dataTable" ng-controller="loadPlayersController as loadplayers">
         <table>
           <tr>
             <th></th>
             <th>First Name</th>
-            <th>Last Name</th>
+            <th>surname</th>
             <th>Sex</th>
             <th>Tier</th>
             <th>Email</th>
           </tr>
           <tr ng-repeat="">
-            <th>{}</th>
-            <th>{}</th>
-            <th>{}</th>
-            <th>{}</th>
-            <th>{}</th>
-            <th>{}</th>
+            <th>{{loadPlayers.id}}</th>
+            <th>{{loadplayers.firstName}}</th>
+            <th>{{loadplayers.surname}}</th>
+            <th>{{loadplayers.sex}}</th>
+            <th>{{loadplayers.tier}}</th>
+            <th>{{loadPlayers.email}}</th>
           </tr>
 
         </table>
@@ -84,6 +97,17 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

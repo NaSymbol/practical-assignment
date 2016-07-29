@@ -8,14 +8,14 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="myApp">
+  <body ng-app="practicalAssignmentApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -44,7 +44,10 @@
     </button>
 
 <!-- user input form needs to be a modal-->
-<form name="myForm">
+<!-- modal -->
+<div class="modal" role="dialog">
+  <div class="modal-dialog">
+<form name="myForm" class="modal-content">
     First name:
     <input type="" name="firstName" ng-model="" required>
     Surname:
@@ -55,30 +58,32 @@
     <button>Cancel</button>
     <button>Add</button>
 </form>
+</div>
+</div>
 
 <!-- need to have ng-repeat to loop through all the data and display each row -->
-      <div class="dataTable" ng-controller="myCtrl">
+      <div class="dataTable col-lg-10" ng-controller="loadPlayersController">
 
         <!--test if data bind works-->
-        <p>{{loadPlayersController.testValue}}</p>
-        <p>{{firstName}}</p>
-        <table>
-          <tr>
-            <th></th>
-            <th>First Name</th>
-            <th>surname</th>
-            <th>Sex</th>
-            <th>Tier</th>
-            <th>Email</th>
+        <p>{{testValue}}</p>
+        <p>{{dataPlayer.Email}}</p>
+        <table class="col-lg-12">
+          <tr class="col-lg-12">
+            <th class="col-lg-1"></th>
+            <th class="col-lg-1">First Name</th>
+            <th class="col-lg-1">surname</th>
+            <th class="col-lg-1">Sex</th>
+            <th class="col-lg-1">Tier</th>
+            <th class="col-lg-4">Email</th>
           </tr>
           <!-- section that repeats for each player -->
-          <tr ng-repeat="">
+          <tr ng-repeat="x in dataPlayer">
             <th>{{loadplayers.id}}</th>
-            <th>{{.firstName}}</th>
+            <th>{{x.firstName}}</th>
             <th>{{x.Surname}}</th>
-            <th>{{loadplayers.Sex}}</th>
-            <th>{{loadplayers.Tier}}</th>
-            <th>{{loadPlayers.Email}}</th>
+            <th>{{x.loadPlayersController.playerData.Sex}}</th>
+            <th>{{x.loadplayers.Tier}}</th>
+            <th>{{x.loadPlayers.Email}}</th>
           </tr>
 
         </table>

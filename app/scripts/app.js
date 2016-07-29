@@ -32,10 +32,16 @@ angular
   });
 
 
+//dummy area to load data into the controller
   var playerData = [{
+     firstName: 'andy',
+     Surname: "crowe",
+     Sex: "images/icon-male.png",
+     Tier: "images/tier_gold.png",
+     Email: "1@andrewcrowe.nz"
 
 
-  }]
+  }];
 
 //setup application
   var app = angular.module('myApp', []);
@@ -43,9 +49,14 @@ angular
 
   //controller to add players into table from JSON data
   app.controller('loadPlayersController', function($scope, $http) {
+      $this.dPlayers = playerData;
+
       $http.get("data.json")
       .then(function (response) {});
   });
 
 //controller to add player to table
-  app.controller('addPlayerController',function(){});
+  app.controller('addPlayerController',function($scope){
+
+
+  });

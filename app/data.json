@@ -1,4 +1,4 @@
-
+{
 {
    firstName: "Fred",
    Surname: "Redwood",
@@ -40,4 +40,6 @@ Surname: "Redwood",
 Sex: "images/icon-male.png",
 Tier: "images/tier_gold.png",
 Email: "Fred@ggmail.com"
-},
+}
+
+}

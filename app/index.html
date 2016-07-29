@@ -24,7 +24,7 @@
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
-          <img src="./images/Viz_logo.png">
+          <img class="pull-lg-left" src="./images/Viz_logo.png">
           <div class="navbar-header">
 
             <h1>DataGrid Assignment</h1>
@@ -38,10 +38,12 @@
     <div class="container">
     <div ng-view=""></div>
 
+<sidebar class='col-lg-1'>
 <!-- button when onclick pops up modal -->
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+    <button type="button" class="button">
       add player
     </button>
+</sidebar>
 
 <!-- user input form needs to be a modal-->
 <!-- modal -->
@@ -55,35 +57,36 @@
     <input type="" name="Sex" ng-model="" required>
     <input type="" name="Teir" ng-model="" required>
     <input type="" name="Email" ng-model="" required>
-    <button>Cancel</button>
-    <button>Add</button>
+    <button class="button">Cancel</button>
+    <button class="button">Add</button>
 </form>
 </div>
 </div>
 
 <!-- need to have ng-repeat to loop through all the data and display each row -->
-      <div class="dataTable col-lg-10" ng-controller="loadPlayersController">
+      <div class="dataTable col-lg-11" ng-controller="loadPlayersController">
 
-        <!--test if data bind works-->
+        <!--test if data bind works
         <p>{{testValue}}</p>
         <p>{{dataPlayer.Email}}</p>
-        <table class="col-lg-12">
-          <tr class="col-lg-12">
-            <th class="col-lg-1"></th>
-            <th class="col-lg-1">First Name</th>
-            <th class="col-lg-1">surname</th>
-            <th class="col-lg-1">Sex</th>
-            <th class="col-lg-1">Tier</th>
-            <th class="col-lg-4">Email</th>
+      -->
+        <table class="">
+          <tr class="">
+            <th class="">0</th>
+            <th class="col-lg-2">First Name</th>
+            <th class="col-lg-2">surname</th>
+            <th class="col-lg-2">Sex</th>
+            <th class="col-lg-2">Tier</th>
+            <th class="col-lg-5">Email</th>
           </tr>
           <!-- section that repeats for each player -->
           <tr ng-repeat="x in dataPlayer">
-            <th>{{loadplayers.id}}</th>
+            <th>{{x.id}}</th>
             <th>{{x.firstName}}</th>
             <th>{{x.Surname}}</th>
-            <th>{{x.loadPlayersController.playerData.Sex}}</th>
-            <th>{{x.loadplayers.Tier}}</th>
-            <th>{{x.loadPlayers.Email}}</th>
+            <th>{{x.Sex}}</th>
+            <th>{{x.Tier}}</th>
+            <th>{{x.Email}}</th>
           </tr>
 
         </table>

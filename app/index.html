@@ -43,15 +43,31 @@
     </button>
 
 <!-- need to have ng-repeat to loop through all the data and display each row -->
-      <div class="dataTable">
+      <div class="dataTable" ng-controller="loadPlayers">
+        <table>
+          <tr>
+            <th></th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Sex</th>
+            <th>Tier</th>
+            <th>Email</th>
+          </tr>
+          <tr ng-repeat="">
+            <th>{}</th>
+            <th>{}</th>
+            <th>{}</th>
+            <th>{}</th>
+            <th>{}</th>
+            <th>{}</th>
+          </tr>
 
+        </table>
       </div>
     </div>
 
     <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+
     </div>
 
 

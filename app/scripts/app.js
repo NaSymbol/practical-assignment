@@ -30,3 +30,16 @@ angular
         redirectTo: '/'
       });
   });
+
+//setup application
+  var app = angular.module('myApp', []);
+
+
+  //controller to add players into table from JSON data
+  app.controller('loadPlayersController', function($scope, $http) {
+      $http.get("data.json")
+      .then(function (response) {});
+  });
+
+//controller to add player to table
+  app.controller('addPlayerController',function(){});

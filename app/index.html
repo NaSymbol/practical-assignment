@@ -24,6 +24,7 @@
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
+          <img src="./images/Viz_logo.png">
           <div class="navbar-header">
 
             <a class="navbar-brand" href="#/">practicalAssignment</a>
@@ -68,8 +69,8 @@
           </tr>
           <tr ng-repeat="">
             <th>{{loadplayers.id}}</th>
-            <th>{{loadplayers.firstName}}</th>
-            <th>{{loadplayers.Surname}}</th>
+            <th>{{.firstName}}</th>
+            <th>{{x.Surname}}</th>
             <th>{{loadplayers.Sex}}</th>
             <th>{{loadplayers.Tier}}</th>
             <th>{{loadPlayers.Email}}</th>
@@ -111,8 +112,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="scripts/angular.min.js"></script>
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>

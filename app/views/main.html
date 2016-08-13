@@ -1,23 +1,57 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+  <sidebar class='col-lg-1'>
+    <!-- button when onclick pops up modal -->
+    <button type="button" class="button" data-toggle="modal" data-target="#modalN">
+      add player
+    </button>
+  </sidebar>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+  <!-- user input form needs to be a modal-->
+  <!-- modal -->
+  <div id="modalN" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <form name="myForm" class="modal-content">
+        First name:
+        <input type="" name="firstName" ng-model="" required> Surname:
+        <input type="" name="Surname" ng-model="" required>
+        <input type="" name="Sex" ng-model="" required>
+        <input type="" name="Teir" ng-model="" required>
+        <input type="" name="Email" ng-model="" required>
+        <button class="button" data-dismiss="modal">Cancel</button>
+        <button class="button">Add</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- need to have ng-repeat to loop through all the data and display each row -->
+  <div class="dataTable col-lg-11" ng-controller="loadPlayersController">
+
+    <!--test if data bind works
+    <p>{{testValue}}</p>
+    <p>{{dataPlayer.Email}}</p>
+  -->
+  <p>{{testValue}}</p>
+  <p>{{playerData.Sex}}</p>
+  <p>{{playerData[0].Sex}}</p>
+    <table class="">
+      <tr class="">
+        <th class=""></th>
+        <th class="col-lg-2">First Name</th>
+        <th class="col-lg-2">surname</th>
+        <th class="col-lg-1">Sex</th>
+        <th class="col-lg-2">Tier</th>
+        <th class="col-lg-5">Email</th>
+      </tr>
+      <!-- section that repeats for each player -->
+      <tr ng-repeat="x in playerData">
+        <th>{{$index + 1}}</th>
+        <th>{{x.firstName}}</th>
+        <th>{{x.Surname}}</th>
+        <th><img src="{{x.Sex}}"</img></th>
+        <th><img src="{{x.Tier}}"</img></th>
+        <th>{{x.Email}}</th>
+      </tr>
+
+    </table>
+  </div>

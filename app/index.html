@@ -1,133 +1,84 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="practicalAssignmentApp">
-    <!--[if lte IE 8]>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+
+<body ng-app="practicalAssignmentApp">
+  <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <img class="logo_align pull-lg-left col-lg-2" src="./images/Viz_logo.png" style="margin-top:20px;">
-          <div class="col-lg-4 pull-lg-right" style="float:right">
-            <h2 class="">DataGrid Assignment</h2>
-          </div>
-
-
+  <!-- Add your site or application content here -->
+  <div class="header">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <img class="logo_align pull-lg-left col-lg-2" src="./images/Viz_logo.png" style="margin-top:20px;">
+        <div class="col-lg-4 pull-lg-right" style="float:right">
+          <h2 class="">DataGrid Assignment</h2>
         </div>
+
+
       </div>
     </div>
+  </div>
 
-    <div class="container">
+  <div class="container">
     <div ng-view=""></div>
+  </div>
 
-<sidebar class='col-lg-1'  >
-<!-- button when onclick pops up modal -->
-    <button type="button" class="button" data-toggle="modal" data-target="#modalN">
-      add player
-    </button>
-</sidebar>
+  <div class="footer">
 
-<!-- user input form needs to be a modal-->
-<!-- modal -->
-<div id="modalN" class="modal" role="dialog">
-  <div class="modal-dialog">
-<form name="myForm" class="modal-content">
-    First name:
-    <input type="" name="firstName" ng-model="" required>
-    Surname:
-    <input type="" name="Surname" ng-model="" required>
-    <input type="" name="Sex" ng-model="" required>
-    <input type="" name="Teir" ng-model="" required>
-    <input type="" name="Email" ng-model="" required>
-    <button class="button" data-dismiss="modal">Cancel</button>
-    <button class="button">Add</button>
-</form>
-</div>
-</div>
-
-<!-- need to have ng-repeat to loop through all the data and display each row -->
-      <div class="dataTable col-lg-11" ng-controller="loadPlayersController">
-
-        <!--test if data bind works
-        <p>{{testValue}}</p>
-        <p>{{dataPlayer.Email}}</p>
-      -->
-        <table class="">
-          <tr class="">
-            <th class="">0</th>
-            <th class="col-lg-2">First Name</th>
-            <th class="col-lg-2">surname</th>
-            <th class="col-lg-2">Sex</th>
-            <th class="col-lg-2">Tier</th>
-            <th class="col-lg-5">Email</th>
-          </tr>
-          <!-- section that repeats for each player -->
-          <tr ng-repeat="x in dataPlayer">
-            <th>{{x.id}}</th>
-            <th>{{x.firstName}}</th>
-            <th>{{x.Surname}}</th>
-            <th>{{x.Sex}}</th>
-            <th>{{x.Tier}}</th>
-            <th>{{x.Email}}</th>
-          </tr>
-
-        </table>
-      </div>
-    </div>
-
-    <div class="footer">
-
-    </div>
+  </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    ! function(A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+          (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="../bower_components/angular-animate/angular-animate.js"></script>
-    <script src="../bower_components/angular-aria/angular-aria.js"></script>
-    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="../bower_components/angular-messages/angular-messages.js"></script>
-    <script src="../bower_components/angular-resource/angular-resource.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="../bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <!-- endbuild -->
 </body>
+
 </html>

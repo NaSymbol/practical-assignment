@@ -30,34 +30,3 @@ angular
         redirectTo: '/'
       });
   });
-
-
-/**
-//setup application
-  var app = angular.module('myApp', []);
-
-
-  //controller to add players into table from JSON data
-  app.controller('loadPlayersController', function($scope, $http) {
-    $scope.testValue = "this is a test";
-    //test for data bind
-    $scope.playerData = [{
-       firstName: "andy",
-       Surname: "crowe",
-       Sex: "images/icon-male.png",
-       Tier: "images/tier_gold.png",
-       Email: "1@andrewcrowe.nz"
-
-    }];
-
-      $http.get("data.json")
-      .then(function (response) {});
-  });
-
-//controller to add player to table
-  app.controller('addPlayerController',function($scope){
-
-
-  });
-
-  */

@@ -1,33 +1,63 @@
+<sidebar class='col-lg-2'>
+  <!-- button when onclick pops up modal -->
+  <button type="button" class="button" data-toggle="modal" data-target="#modalN">
+    add player
+  </button>
+</sidebar>
 
+<!-- user input form needs to be a modal-->
+<!-- modal -->
+<div id="modalN" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content" style="top:300px;">
+      <div class="modal-header">
+        add player
+      </div>
+      <form name="myForm" class="modal-content form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">First name:</label>
+          <input type="" name="firstName" ng-model="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Surname:</label>
 
-  <sidebar class='col-lg-1'>
-    <!-- button when onclick pops up modal -->
-    <button type="button" class="button" data-toggle="modal" data-target="#modalN">
-      add player
-    </button>
-  </sidebar>
+          <input type="" name="Surname" ng-model="Surname" required>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">sex:</label>
+          <select class="" name="">
+            <option disabled selected value></option>
+            <option value="volvo">Male</option>
+            <option value="saab">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">tier:</label>
 
-  <!-- user input form needs to be a modal-->
-  <!-- modal -->
-  <div id="modalN" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <form name="myForm" class="modal-content">
-        First name:
-        <input type="" name="firstName" ng-model="" required> Surname:
-        <input type="" name="Surname" ng-model="" required>
-        <input type="" name="Sex" ng-model="" required>
-        <input type="" name="Teir" ng-model="" required>
-        <input type="" name="Email" ng-model="" required>
-        <button class="button" data-dismiss="modal">Cancel</button>
-        <button class="button">Add</button>
+          <select class="" name="">
+            <option disabled selected value> -- select an tier -- </option>
+            <option value="volvo">Gold</option>
+            <option value="saab">Silver</option>
+            <option value="saab">Bronse</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+          <input type="" name="Email" ng-model="Email" required>
+        </div>
+        <div class="form-group modal-footer">
+          <button class="button" data-dismiss="modal">Cancel</button>
+          <button class="button">Add</button>
+        </div>
       </form>
     </div>
   </div>
+</div>
 
-  <!-- need to have ng-repeat to loop through all the data and display each row -->
-  <div class="dataTable col-lg-11" ng-controller="loadPlayersController">
+<!-- need to have ng-repeat to loop through all the data and display each row -->
+<div class="dataTable col-lg-10" ng-controller="loadPlayersController">
 
-    <!--test if data bind works
+  <!--test if data bind works
     <p>{{testValue}}</p>
     <p>{{dataPlayer.Email}}</p>
   -->
@@ -37,24 +67,27 @@
   <p>{{playerData.Sex}}</p>
   <p>{{playerData[0].Sex}}</p>
 -->
-    <table class="table table-striped table-hover">
-      <tr class="">
-        <th class=""></th>
-        <th ng-click="" class="col-lg-2">First Name</th>
-        <th ng-click="" class="col-lg-2">surname</th>
-        <th ng-click="" class="col-lg-1">Sex</th>
-        <th ng-click="" class="col-lg-2">Tier</th>
-        <th ng-click="" class="col-lg-3">Email</th>
-      </tr>
-      <!-- section that repeats for each player -->
-      <tr ng-repeat="x in playerData" ng-click="">
-        <th>{{$index + 1}}</th>
-        <th>{{x.firstName}}</th>
-        <th>{{x.Surname}}</th>
-        <th><img src="{{x.Sex}}"</img></th>
-        <th><img src="{{x.Tier}}"</img></th>
-        <th>{{x.Email}}</th>
-      </tr>
+  <style>
 
-    </table>
-  </div>
+  </style>
+  <table class="table table-striped table-hover" style="min-height:900px;">
+    <tr style="background-color: buttonface; height:5px; padding-top:3px;">
+      <th style="width:5px;background-color:lightblue"></th>
+      <th ng-click="" class="col-lg-2">First Name</th>
+      <th ng-click="" class="col-lg-2">surname</th>
+      <th ng-click="" class="col-lg-1">Sex</th>
+      <th ng-click="" class="">Tier</th>
+      <th ng-click="" class="col-lg-3">Email</th>
+    </tr>
+    <!-- section that repeats for each player -->
+    <tr style="height:40px;" ng-repeat="x in playerData" ng-click="">
+      <td style="width:5px; background-color:buttonface;">{{$index + 1}}</td>
+      <td>{{x.firstName}}</td>
+      <td>{{x.Surname}}</td>
+      <td><img src="{{x.Sex}}" </img></td>
+      <td style="width:40px; margin:0px; padding:0px;"><img style="width:40px; margin:0px; padding:0px;" src="{{x.Tier}}" </img></th>
+        <td>{{x.Email}}</td>
+    </tr>
+
+  </table>
+</div>

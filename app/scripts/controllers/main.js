@@ -39,6 +39,17 @@ angular.module('practicalAssignmentApp').controller('loadPlayersController', ['$
     $scope.playerData = data;
   });
 
+  $scope.addRow = function() {
+    $scope.playerData.push({
+      'name': $scope.name,
+      '': $scope.firstName,
+      'headoffice': $scope.headoffice
+    });
+    $scope.name = '';
+    $scope.employees = '';
+    $scope.headoffice = '';
+  };
+
 
   /*test for json file
   $http.get('http://mysafeinfo.com/api/data?list=englishmonarchs&format=json').success(function(data) {

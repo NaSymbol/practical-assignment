@@ -1,4 +1,4 @@
-{
+[
 {
    firstName: "Fred",
    Surname: "Redwood",
@@ -42,4 +42,4 @@ Tier: "images/tier_gold.png",
 Email: "Fred@ggmail.com"
 }
 
-}
+]

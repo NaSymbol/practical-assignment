@@ -31,20 +31,23 @@
     <p>{{testValue}}</p>
     <p>{{dataPlayer.Email}}</p>
   -->
+
+  <!--
   <p>{{testValue}}</p>
   <p>{{playerData.Sex}}</p>
   <p>{{playerData[0].Sex}}</p>
-    <table class="">
+-->
+    <table class="table table-striped table-hover">
       <tr class="">
         <th class=""></th>
-        <th class="col-lg-2">First Name</th>
-        <th class="col-lg-2">surname</th>
-        <th class="col-lg-1">Sex</th>
-        <th class="col-lg-2">Tier</th>
-        <th class="col-lg-5">Email</th>
+        <th ng-click="" class="col-lg-2">First Name</th>
+        <th ng-click="" class="col-lg-2">surname</th>
+        <th ng-click="" class="col-lg-1">Sex</th>
+        <th ng-click="" class="col-lg-2">Tier</th>
+        <th ng-click="" class="col-lg-3">Email</th>
       </tr>
       <!-- section that repeats for each player -->
-      <tr ng-repeat="x in playerData">
+      <tr ng-repeat="x in playerData" ng-click="">
         <th>{{$index + 1}}</th>
         <th>{{x.firstName}}</th>
         <th>{{x.Surname}}</th>
